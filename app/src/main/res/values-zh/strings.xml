@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">GeoEveryTP</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_log">日志</string>
+    <string name="tab_settings">设置</string>
+    <string name="latitude">纬度</string>
+    <string name="longitude">经度</string>
+    <string name="altitude">海拔（米）</string>
+    <string name="altitude_from_coordinates">海拔（按经纬度）</string>
+    <string name="altitude_from_device">海拔（按气压计/设备）</string>
+    <string name="pressure_hpa">气压（hPa）</string>
+    <string name="timezone">时区</string>
+    <string name="local_time">当地时间</string>
+    <string name="refresh">刷新</string>
+    <string name="save_to_log">保存到日志</string>
+    <string name="log">日志</string>
+    <string name="settings">设置</string>
+    <string name="language">语言</string>
+    <string name="follow_system">随系统</string>
+    <string name="chinese">中文</string>
+    <string name="english">English</string>
+    <string name="log_empty">暂无日志。请在首页刷新位置后使用「保存到日志」并命名。</string>
+    <string name="log_delete_confirm">确定删除这条日志？</string>
+    <string name="name_hint">日志名称</string>
+    <string name="save">保存</string>
+    <string name="delete">删除</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="guide_title">使用说明</string>
+    <string name="guide_message">点击「刷新」获取当前位置。可命名后保存到日志；在「日志」页查看或删除记录。</string>
+    <string name="permission_required">需要位置权限。</string>
+    <string name="permission_rationale">本应用需要位置权限以显示经纬度、海拔与时间。</string>
+    <string name="location_unavailable">无法获取位置，请检查权限后重试。</string>
+    <string name="recorded_at">记录于</string>
+    <string name="altitude_logic_title">海拔数据来源说明</string>
+    <string name="altitude_logic_coords">海拔（按经纬度）：来自 Open-Elevation API（https://api.open-elevation.com），使用全球 DEM（数字高程模型，如 SRTM）数据。根据经纬度查询该点地表海拔（米）。无公式计算，为高程数据集的直接查询结果。需联网。</string>
+    <string name="altitude_logic_device">海拔（按气压计/设备）：由设备气压计（压力传感器）或 GPS/高度融合提供。可用时，Android Location 返回海拔（米）。多由气压公式推算：h = 44330 × (1 − (p/p₀)^0.19)，其中 p 为实测气压，p₀ 为海平面参考气压。无气压计机型显示 N/A。</string>
+</resources>

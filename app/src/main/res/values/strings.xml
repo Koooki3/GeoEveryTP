@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">GeoEveryTP</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_log">Log</string>
+    <string name="tab_settings">Settings</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="altitude">Altitude (m)</string>
+    <string name="altitude_from_coordinates">Altitude from coordinates (m)</string>
+    <string name="altitude_from_device">Altitude from device (m)</string>
+    <string name="pressure_hpa">Pressure (hPa)</string>
+    <string name="timezone">Timezone</string>
+    <string name="local_time">Local time</string>
+    <string name="refresh">Refresh</string>
+    <string name="save_to_log">Save to log</string>
+    <string name="log">Log</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="follow_system">Follow system</string>
+    <string name="chinese">Chinese</string>
+    <string name="english">English</string>
+    <string name="log_empty">No logs yet. Save current location with a name from Home.</string>
+    <string name="log_delete_confirm">Delete this log?</string>
+    <string name="name_hint">Log name</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="guide_title">Usage</string>
+    <string name="guide_message">Tap Refresh to get your current location. Save current spot to log with a name. View or delete logs in the Log tab.</string>
+    <string name="permission_required">Location permission is required.</string>
+    <string name="permission_rationale">This app needs location access to show coordinates, altitude and time.</string>
+    <string name="location_unavailable">Location unavailable. Check permission and try again.</string>
+    <string name="recorded_at">Recorded at</string>
+    <string name="altitude_logic_title">Altitude data source</string>
+    <string name="altitude_logic_coords">Altitude from coordinates: Obtained from Open-Elevation API (https://api.open-elevation.com), which uses global DEM (Digital Elevation Model, e.g. SRTM) data. Given latitude and longitude, the API returns the ground surface elevation in metres at that point. No formula—direct lookup from the elevation dataset. Requires network.</string>
+    <string name="altitude_logic_device">Altitude from device: Provided by the device barometer (pressure sensor) or GPS/altitude fusion. When available, Android Location gives altitude in metres. It is often derived from the barometric formula: h = 44330 × (1 − (p/p₀)^0.19), where p is measured pressure and p₀ is sea-level reference pressure. Devices without a barometer show N/A.</string>
+</resources>

@@ -73,11 +73,7 @@ app/src/main/java/com/example/geoeverytp/
 
 ## License
 
-This project is open source. Choose a license (e.g. [MIT](https://opensource.org/licenses/MIT) or [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)) and add a `LICENSE` file in the repo root. Then update this section, for example:
-
-```text
-Licensed under the MIT License. See the LICENSE file for details.
-```
+Licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](LICENSE) file for details.
 
 ## Version
 

@@ -1,14 +1,15 @@
 package com.example.geoeverytp.elevation
 
+import android.util.LruCache
 import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.Locale
-import java.util.concurrent.ConcurrentHashMap
 
 /**
  * Fetches ground elevation (m) by coordinates from Open-Elevation API (DEM data).
  * No API key; free tier with rate limits. Results are cached by grid (~0.001° ≈ 100 m) to reduce calls.
+ * Cache is capped with LRU eviction to avoid unbounded memory growth.
  */
 object ElevationHelper {
 
@@ -16,17 +17,27 @@ object ElevationHelper {
     private const val TIMEOUT_MS = 5000
     /** Grid size for cache key; same cell reuses cached elevation. */
     private const val CACHE_GRID = 0.001
+    /** Max cache entries; evicts least recently used when exceeded. */
+    private const val MAX_CACHE_ENTRIES = 300
 
-    private val cache = ConcurrentHashMap<String, Double?>()
+    private object FailedMarker
+
+    private val cache = object : LruCache<String, Any>(MAX_CACHE_ENTRIES) {
+        override fun sizeOf(key: String, value: Any): Int = 1
+    }
 
     /**
      * Returns ground elevation (m) at (latitude, longitude). Cached by grid; null on network error.
      */
     suspend fun getElevationFromCoordinates(latitude: Double, longitude: Double): Double? {
         val key = cacheKey(latitude, longitude)
-        cache[key]?.let { return it }
+        when (val cached = cache.get(key)) {
+            null -> { /* not in cache */ }
+            is Double -> return cached
+            else -> return null /* cached failure (FailedMarker) */
+        }
         val value = fetch(latitude, longitude)
-        cache[key] = value
+        cache.put(key, value ?: FailedMarker)
         return value
     }
 
